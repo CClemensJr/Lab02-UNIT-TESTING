@@ -7,7 +7,14 @@ namespace ATM
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            UserInterface();
+
+            Console.ReadLine();
+        }
+
+        static void UserInterface()
+        {
+            Console.WriteLine("This is the user interface");
         }
     }
 }
