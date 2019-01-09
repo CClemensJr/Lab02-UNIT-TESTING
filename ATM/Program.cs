@@ -29,7 +29,8 @@ namespace ATM
 
         static void ShowMenu()
         {
-            CenterText("Please select an option:\n\n");
+            CenterText("Please select an option:");
+            CenterText("------------------------");
             ColumnizeText("1.",  "View your balance.");
             ColumnizeText("2.", "Withdraw cash.");
             ColumnizeText("3.", "Deposit cash.");
@@ -41,9 +42,13 @@ namespace ATM
          * INTERFACE HELPER METHODS
          **/
          // Colorize will make the console look more like an old ATM
-         static void ColorizeScreen()
+        static void ColorizeScreen()
         {
-
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.Clear();
+            
         }
 
         // CenterText will center text in the console window. Inspiration came from MSDN docs on String.Format and this stackoverflow article: stackoverflow.com/questions/21917203/how-do-i-center-text-in-a-console-application
