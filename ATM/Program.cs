@@ -43,7 +43,7 @@ namespace ATM
         // ColumnizeText is similar to center text except it will center the text across two columns
         static void ColumnizeText(string menuSelector, string selectorText)
         {
-            Console.WriteLine(menuSelector + selectorText);
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 3) + (menuSelector.Length)) + "} {1," + ((Console.WindowWidth / 4) + (selectorText.Length)) + "}", menuSelector, selectorText));
         }
     }
 }
