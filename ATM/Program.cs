@@ -12,12 +12,17 @@ namespace ATM
             Console.ReadLine();
         }
 
+        /**
+         * INTERFACE METHODS
+         **/
+
         // The userinterface will interact with the user
         static void UserInterface()
         {
             ColorizeScreen();
             ShowHeading();
             ShowMenu();
+            GetMenuSelection();
         }
 
         // Show heading is responsible for showing the credit union slogan
@@ -27,6 +32,7 @@ namespace ATM
             CenterText("Thank you for your membership!\n\n\n");
         }
 
+        // Show the menu items
         static void ShowMenu()
         {
             CenterText("Please select an option:");
@@ -36,6 +42,13 @@ namespace ATM
             ColumnizeText("3.", "Deposit cash.");
         }
 
+        // Collect the user input
+        static void GetMenuSelection()
+        {
+            CenterText("Your Selection: ");
+
+            string menuSelector = Console.ReadLine();
+        }
 
 
         /**
