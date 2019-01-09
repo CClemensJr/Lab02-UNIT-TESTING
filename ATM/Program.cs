@@ -14,7 +14,13 @@ namespace ATM
 
         static void UserInterface()
         {
-            Console.WriteLine("This is the user interface");
+            CenterText("Welcome to Code Fellows Credit Union.");
+            CenterText("Thank you for your membership!");
+        }
+
+        static void CenterText(string text)
+        {
+            Console.WriteLine(text);
         }
     }
 }
