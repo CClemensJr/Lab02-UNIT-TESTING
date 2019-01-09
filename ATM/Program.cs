@@ -48,6 +48,19 @@ namespace ATM
             CenterText("Your Selection: ", 1);
 
             string menuSelector = Console.ReadLine();
+
+            if (menuSelector.Contains("1"))
+            {
+                ViewBalance();
+            }
+            else if (menuSelector.Contains("2"))
+            {
+                WithdrawCash();
+            }
+            else if (menuSelector.Contains("3"))
+            {
+                DepositCash();
+            }
         }
 
 
