@@ -93,7 +93,19 @@ namespace ATM
 
         static void GetDepositCash()
         {
-            Console.WriteLine("In DepositCash");
+            GetViewBalance();
+
+            Console.WriteLine("\n\n");
+            CenterText("How much cash would like to deposit?  ", 1);
+
+            string userInput = Console.ReadLine();
+            decimal deposit = decimal.Parse(userInput);
+
+            decimal tempBalance = DepositCash(accountBalance, deposit);
+            accountBalance = tempBalance;
+
+            Console.WriteLine();
+            CenterText($"You new balance is: ${accountBalance}");
         }
 
 
