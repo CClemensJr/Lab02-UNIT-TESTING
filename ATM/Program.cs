@@ -30,6 +30,7 @@ namespace ATM
         // Show heading is responsible for showing the credit union slogan
         static void ShowHeading()
         {
+            Console.Clear();
             CenterText("Welcome to Code Fellows Credit Union.\n");
             CenterText("Thank you for your membership!\n\n\n");
         }
