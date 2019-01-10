@@ -9,7 +9,10 @@ namespace ATM_Tests
         [Fact]
         public void BalanceShouldNotBeLessThanZero()
         {
-            Assert.Equal(0,  )
+            decimal balance = 0m;
+            decimal withdrawal = -5.00m;
+
+            Assert.Equal(0, WithdrawCash(balance, withdrawal));
         }
     }
 }
