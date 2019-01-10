@@ -76,7 +76,11 @@ namespace ATM
 
         static void WithdrawCash()
         {
-            Console.WriteLine("In WithdrawCash");
+            ViewBalance();
+
+            Console.WriteLine("\n\n");
+            CenterText("How much cash would like to withdraw?  ", 1);
+
         }
 
         static void DepositCash()
