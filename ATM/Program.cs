@@ -92,9 +92,11 @@ namespace ATM
         /**
          * CALCULATION METHODS
          **/
-         static decimal WithdrawCash(decimal currentBalance, decimal withdrawal)
+        public static decimal WithdrawCash(decimal currentBalance, decimal withdrawal)
         {
-            return withdrawal;
+            decimal newBalance = currentBalance - withdrawal;
+
+            return newBalance;
         }
 
         /**

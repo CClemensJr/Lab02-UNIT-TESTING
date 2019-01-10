@@ -12,7 +12,7 @@ namespace ATM_Tests
             decimal balance = 0m;
             decimal withdrawal = -5.00m;
 
-            Assert.Equal(0, WithdrawCash(balance, withdrawal));
+            Assert.Equal(0, Program.WithdrawCash(balance, withdrawal));
         }
     }
 }
