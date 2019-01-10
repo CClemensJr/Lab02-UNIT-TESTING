@@ -63,6 +63,22 @@ namespace ATM
             }
         }
 
+        static void ViewBalance()
+        {
+            Console.WriteLine("In View Balance");
+        }
+
+        static void WithdrawCash()
+        {
+            Console.WriteLine("In WithdrawCash");
+        }
+
+        static void DepositCash()
+        {
+            Console.WriteLine("In DepositCash");
+        }
+
+
 
         /**
          * INTERFACE HELPER METHODS
