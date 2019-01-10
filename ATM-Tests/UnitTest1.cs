@@ -14,5 +14,15 @@ namespace ATM_Tests
 
             Assert.Equal(0.00m, Program.WithdrawCash(balance, withdrawal));
         }
+
+        [Fact]
+        public void DepositsShouldAddToBalance()
+        {
+            decimal balance = 0.00m;
+            decimal deposit = 5.00m;
+            decimal newBalance = balance + deposit;
+
+            Assert.Equal(newBalance, Program.DepositCash(balance, deposit));
+        }
     }
 }
