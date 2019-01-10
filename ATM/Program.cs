@@ -76,36 +76,54 @@ namespace ATM
 
         static void GetWithdrawCash()
         {
-            GetViewBalance();
+            try
+            {
+                GetViewBalance();
 
-            Console.WriteLine("\n\n");
-            CenterText("How much cash would like to withdraw?  ", 1);
+                Console.WriteLine("\n\n");
+                CenterText("How much cash would like to withdraw?  ", 1);
 
-            string userInput = Console.ReadLine();
-            decimal withdrawal = decimal.Parse(userInput);
+                string userInput = Console.ReadLine();
+                decimal withdrawal = decimal.Parse(userInput);
 
-            decimal tempBalance = WithdrawCash(accountBalance, withdrawal);
-            accountBalance = tempBalance;
+                decimal tempBalance = WithdrawCash(accountBalance, withdrawal);
+                accountBalance = tempBalance;
 
-            Console.WriteLine();
-            CenterText($"You new balance is: ${accountBalance}");
+                Console.WriteLine();
+                CenterText($"You new balance is: ${accountBalance}");
+            }
+            catch (FormatException)
+            {
+                CenterText("Please provide a monetary amount.");
+
+                GetWithdrawCash();
+            }
         }
 
         static void GetDepositCash()
         {
-            GetViewBalance();
+            try
+            {
+                GetViewBalance();
 
-            Console.WriteLine("\n\n");
-            CenterText("How much cash would like to deposit?  ", 1);
+                Console.WriteLine("\n\n");
+                CenterText("How much cash would like to deposit?  ", 1);
 
-            string userInput = Console.ReadLine();
-            decimal deposit = decimal.Parse(userInput);
+                string userInput = Console.ReadLine();
+                decimal deposit = decimal.Parse(userInput);
 
-            decimal tempBalance = DepositCash(accountBalance, deposit);
-            accountBalance = tempBalance;
+                decimal tempBalance = DepositCash(accountBalance, deposit);
+                accountBalance = tempBalance;
 
-            Console.WriteLine();
-            CenterText($"You new balance is: ${accountBalance}");
+                Console.WriteLine();
+                CenterText($"You new balance is: ${accountBalance}");
+            }
+            catch (FormatException)
+            {
+                CenterText("Please provide a monetary amount.");
+
+                GetDepositCash();
+            }
         }
 
 
