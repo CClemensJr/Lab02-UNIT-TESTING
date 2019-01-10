@@ -115,7 +115,9 @@ namespace ATM
 
         public static decimal DepositCash(decimal balance, decimal deposit)
         {
+            decimal newBalance = balance + deposit;
 
+            return newBalance;
         }
 
 
