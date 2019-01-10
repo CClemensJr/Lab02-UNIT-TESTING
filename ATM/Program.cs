@@ -5,6 +5,8 @@ namespace ATM
 {
     public class Program
     {
+        static decimal accountBalance = 0.00m;
+
         static void Main(string[] args)
         {
             UserInterface();
@@ -66,7 +68,9 @@ namespace ATM
 
         static void ViewBalance()
         {
-            Console.WriteLine("In View Balance");
+            ShowHeading();
+
+            CenterText($"Current Balance:              ${ accountBalance }");
         }
 
         static void WithdrawCash()
@@ -80,11 +84,15 @@ namespace ATM
         }
 
 
+        /**
+         * CALCULATION METHODS
+         **/
+
 
         /**
          * INTERFACE HELPER METHODS
          **/
-         // Colorize will make the console look more like an old ATM
+        // Colorize will make the console look more like an old ATM
         static void ColorizeScreen()
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
