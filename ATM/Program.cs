@@ -97,6 +97,7 @@ namespace ATM
         }
 
 
+
         /**
          * CALCULATION METHODS
          **/
@@ -111,6 +112,13 @@ namespace ATM
 
             return newBalance;
         }
+
+        public static decimal DepositCash(decimal balance, decimal deposit)
+        {
+
+        }
+
+
 
         /**
          * INTERFACE HELPER METHODS
