@@ -92,7 +92,10 @@ namespace ATM
         /**
          * CALCULATION METHODS
          **/
-
+         static decimal WithdrawCash(decimal currentBalance, decimal withdrawal)
+        {
+            return withdrawal;
+        }
 
         /**
          * INTERFACE HELPER METHODS
