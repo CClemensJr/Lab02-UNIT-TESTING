@@ -54,36 +54,36 @@ namespace ATM
 
             if (menuSelector.Contains("1"))
             {
-                ViewBalance();
+                GetViewBalance();
             }
             else if (menuSelector.Contains("2"))
             {
-                WithdrawCash();
+                GetWithdrawCash();
             }
             else if (menuSelector.Contains("3"))
             {
-                DepositCash();
+                GetDepositCash();
 
             }
         }
 
-        static void ViewBalance()
+        static void GetViewBalance()
         {
             ShowHeading();
 
             CenterText($"Current Balance:              ${ accountBalance }");
         }
 
-        static void WithdrawCash()
+        static void GetWithdrawCash()
         {
-            ViewBalance();
+            GetViewBalance();
 
             Console.WriteLine("\n\n");
             CenterText("How much cash would like to withdraw?  ", 1);
 
         }
 
-        static void DepositCash()
+        static void GetDepositCash()
         {
             Console.WriteLine("In DepositCash");
         }
