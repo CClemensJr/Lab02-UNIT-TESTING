@@ -81,6 +81,14 @@ namespace ATM
             Console.WriteLine("\n\n");
             CenterText("How much cash would like to withdraw?  ", 1);
 
+            string userInput = Console.ReadLine();
+            decimal withdrawal = decimal.Parse(userInput);
+
+            decimal tempBalance = WithdrawCash(accountBalance, withdrawal);
+            accountBalance = tempBalance;
+
+            Console.WriteLine();
+            CenterText($"You new balance is: ${accountBalance}");
         }
 
         static void GetDepositCash()
@@ -92,9 +100,14 @@ namespace ATM
         /**
          * CALCULATION METHODS
          **/
-        public static decimal WithdrawCash(decimal currentBalance, decimal withdrawal)
+        public static decimal WithdrawCash(decimal balance, decimal withdrawal)
         {
-            decimal newBalance = currentBalance - withdrawal;
+            decimal newBalance = balance - withdrawal;
+
+            if ( newBalance < 0.00m )
+            {
+                newBalance = 0.00m;
+            }
 
             return newBalance;
         }
