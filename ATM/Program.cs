@@ -47,28 +47,41 @@ namespace ATM
             CenterText("4.                 Quit.");
         }
 
-        // Collect the user input
+        // Collect the user input and call the method appropriate to their selection
         static void GetMenuSelection()
         {
-            CenterText("Your Selection: ", 1);
+            try
+            {
+                CenterText("Your Selection: ", 1);
 
-            string menuSelector = Console.ReadLine();
+                string menuSelector = Console.ReadLine();
+                int menuSelectorNumber = int.Parse(menuSelector);
 
-            if (menuSelector.Contains("1"))
-            {
-                GetViewBalance();
+                if (menuSelectorNumber == 1)
+                {
+                    GetViewBalance();
+                }
+                else if (menuSelectorNumber == 2)
+                {
+                    GetWithdrawCash();
+                }
+                else if (menuSelectorNumber == 3)
+                {
+                    GetDepositCash();
+                }
+                else if (menuSelectorNumber == 4)
+                {
+                    Environment.Exit(1);
+                }
             }
-            else if (menuSelector.Contains("2"))
+            catch(Exception error)
             {
-                GetWithdrawCash();
+                Console.WriteLine("Please make a valid selection:");
+                Console.WriteLine(error.Message);
             }
-            else if (menuSelector.Contains("3"))
+            finally
             {
-                GetDepositCash();
-            }
-            else if (menuSelector.Contains("4"))
-            {
-                Environment.Exit(1);
+                UserInterface();
             }
         }
 
@@ -92,6 +105,12 @@ namespace ATM
 
                 string userInput = Console.ReadLine();
                 decimal withdrawal = decimal.Parse(userInput);
+
+                if (withdrawal < 0)
+                {
+                    Console.WriteLine("\n\nPlease enter a number greater than 0");
+                    GetWithdrawCash();
+                }
 
                 decimal tempBalance = WithdrawCash(accountBalance, withdrawal);
                 accountBalance = tempBalance;
