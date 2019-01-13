@@ -5,7 +5,7 @@ namespace ATM
 {
     public class Program
     {
-        static decimal accountBalance = 0.00m;
+        static decimal accountBalance = 36.00m;
 
         static void Main(string[] args)
         {
@@ -52,6 +52,7 @@ namespace ATM
         {
             try
             {
+                Console.WriteLine("\n\n");
                 CenterText("Your Selection: ", 1);
 
                 string menuSelector = Console.ReadLine();
@@ -88,9 +89,11 @@ namespace ATM
         // Show the accountbalance on the screen
         static void GetViewBalance()
         {
-            ShowHeading();
-
             CenterText($"Current Balance:              ${ accountBalance }");
+
+            Console.WriteLine("\n\n");
+            CenterText("Press enter to make another selection.", 1);
+            Console.ReadLine();
         }
 
         // Show the balance to the user, ask how much they want to withdraw, then show the updated balance to the user
@@ -98,17 +101,14 @@ namespace ATM
         {
             try
             {
-                GetViewBalance();
-
-                Console.WriteLine("\n\n");
-                CenterText("How much cash would like to withdraw?  ", 1);
+                CenterText("How much cash would like to withdraw?  $", 1);
 
                 string userInput = Console.ReadLine();
                 decimal withdrawal = decimal.Parse(userInput);
 
                 if (withdrawal < 0)
                 {
-                    Console.WriteLine("\n\nPlease enter a number greater than 0");
+                    CenterText("Please enter a number greater than 0");
                     GetWithdrawCash();
                 }
 
@@ -117,12 +117,15 @@ namespace ATM
 
                 Console.WriteLine();
                 CenterText($"You new balance is: ${accountBalance}");
+
+                Console.WriteLine("\n\n");
+                CenterText("Press enter to make another selection.", 1);
+                Console.ReadLine();
             }
             catch (FormatException)
             {
-                CenterText("Please provide a monetary amount.");
-
-                GetWithdrawCash();
+                CenterText("Please provide a monetary amount.", 1);
+                Console.ReadLine();
             }
         }
 
@@ -131,25 +134,31 @@ namespace ATM
         {
             try
             {
-                GetViewBalance();
-
-                Console.WriteLine("\n\n");
-                CenterText("How much cash would like to deposit?  ", 1);
+                CenterText("How much cash would like to deposit?  $", 1);
 
                 string userInput = Console.ReadLine();
                 decimal deposit = decimal.Parse(userInput);
+
+                if (deposit < 0)
+                {
+                    CenterText("Please enter a number greater than 0");
+                    GetWithdrawCash();
+                }
 
                 decimal tempBalance = DepositCash(accountBalance, deposit);
                 accountBalance = tempBalance;
 
                 Console.WriteLine();
                 CenterText($"You new balance is: ${accountBalance}");
+
+                Console.WriteLine("\n\n");
+                CenterText("Press enter to make another selection.", 1);
+                Console.ReadLine();
             }
             catch (FormatException)
             {
-                CenterText("Please provide a monetary amount.");
-
-                GetDepositCash();
+                CenterText("Please provide a monetary amount.", 1);
+                Console.ReadLine();
             }
         }
 
@@ -161,22 +170,47 @@ namespace ATM
         // This method takes a balance and a withdrawal amount then returns a new balance equal to the balance minus the withdrawal
         public static decimal WithdrawCash(decimal balance, decimal withdrawal)
         {
-            decimal newBalance = balance - withdrawal;
-
-            if ( newBalance < 0.00m )
+            try
+            { 
+                if ((balance - withdrawal) < 0.00m || withdrawal < 0)
+                {
+                    return balance;
+                }
+                else
+                {
+                    return balance - withdrawal;
+                }
+            }
+            catch (Exception error)
             {
-                newBalance = 0.00m;
+                Console.WriteLine("Please provide valid input:");
+                Console.WriteLine(error.Message);
             }
 
-            return newBalance;
+            return balance;
         }
 
         // This method takes a balance and a deposit amount then returns a new balance equal to the balance plus the deposit
         public static decimal DepositCash(decimal balance, decimal deposit)
         {
-            decimal newBalance = balance + deposit;
+            try
+            {
+                if (deposit < 0)
+                {
+                    return balance;
+                }
+                else
+                {
+                    return balance + deposit;
+                }
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine("Please provide valid input:");
+                Console.WriteLine(error.Message);
+            }
 
-            return newBalance;
+            return balance;
         }
 
 
