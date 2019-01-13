@@ -42,13 +42,9 @@
 ## installation
 ```
 	1. Click on green "Clone or download" button.
-
 	2. Click on the clipboard.
-
 	3. Clone the repository to your projects folder.
-
 	4. Open the project in Visual Studio
-
 	5. Run the application
 ```
 
