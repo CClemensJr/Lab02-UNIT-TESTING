@@ -11,6 +11,7 @@ namespace ATM
         {
             UserInterface();
 
+            Console.WriteLine("Please press any key to exit...");
             Console.ReadLine();
         }
 
@@ -43,6 +44,7 @@ namespace ATM
             CenterText("1.    View your balance.");
             CenterText("2.        Withdraw cash.");
             CenterText("3.         Deposit cash.");
+            CenterText("4.                 Quit.");
         }
 
         // Collect the user input
@@ -63,10 +65,14 @@ namespace ATM
             else if (menuSelector.Contains("3"))
             {
                 GetDepositCash();
-
+            }
+            else if (menuSelector.Contains("4"))
+            {
+                Environment.Exit(1);
             }
         }
 
+        // Show the accountbalance on the screen
         static void GetViewBalance()
         {
             ShowHeading();
@@ -74,6 +80,7 @@ namespace ATM
             CenterText($"Current Balance:              ${ accountBalance }");
         }
 
+        // Show the balance to the user, ask how much they want to withdraw, then show the updated balance to the user
         static void GetWithdrawCash()
         {
             try
@@ -100,6 +107,7 @@ namespace ATM
             }
         }
 
+        // Show the balance to the user, ask how much they want to deposit, then show the updated balance to the user
         static void GetDepositCash()
         {
             try
@@ -131,6 +139,7 @@ namespace ATM
         /**
          * CALCULATION METHODS
          **/
+        // This method takes a balance and a withdrawal amount then returns a new balance equal to the balance minus the withdrawal
         public static decimal WithdrawCash(decimal balance, decimal withdrawal)
         {
             decimal newBalance = balance - withdrawal;
@@ -143,6 +152,7 @@ namespace ATM
             return newBalance;
         }
 
+        // This method takes a balance and a deposit amount then returns a new balance equal to the balance plus the deposit
         public static decimal DepositCash(decimal balance, decimal deposit)
         {
             decimal newBalance = balance + deposit;
