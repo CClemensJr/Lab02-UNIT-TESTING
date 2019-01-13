@@ -18,7 +18,6 @@ namespace ATM
         /**
          * INTERFACE METHODS
          **/
-
         // The userinterface will interact with the user
         static void UserInterface()
         {
