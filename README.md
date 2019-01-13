@@ -17,5 +17,5 @@
 
 ## License
 ``` 
-	MIT Licens
+	MIT License
 ```
