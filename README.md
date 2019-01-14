@@ -1,21 +1,59 @@
-# ATM
+# atm
+>simulate an old school atm experience!
+
+## summary
 ```
-	This app allows users to simulate an old school ATM experience.
+	This application will help you practice checking your balance, making deposits, and making withdrawals all from an ATM interface.
 ```
 
-## Usage
+## example
 ```
-	At the main menu, choose to view the balance, withdraw funds, or deposit funds. Viewing the balance will take you to a with the current balance of the account. Withdrawing funds will take you to a screen that allows you to withdraw funds from your account, provided you have funds to withdraw. Depositing funds will add funds to your account.
+	main menu
+```
+![alt text](https://github.com/CClemensJr/Lab02-UNIT-TESTING/blob/master/assets/main_menu.PNG)
+
+```
+	check balance
+```
+![alt text](https://github.com/CClemensJr/Lab02-UNIT-TESTING/blob/master/assets/check_balance.PNG)
+
+```
+	make withdrawal
+```
+![alt text](https://github.com/CClemensJr/Lab02-UNIT-TESTING/blob/master/assets/make_withdrawal.PNG)
+
+```
+	make deposit
+```
+![alt text](https://github.com/CClemensJr/Lab02-UNIT-TESTING/blob/master/assets/make_deposit.PNG)
+
+## usage
+```
+	1. Run the application.
+	2. At the main menu, enter 1 to check your account balance.
+	3. Press enter to return to the main menu selection.
+	4. Enter 2 to withdraw funds from your account.
+	5. Press enter to return to the main menu selection.
+	6. Enter 3 to deposit funds into your account.
+	7. Press enter to return to the main menu selection.
+	8. Enter 4 to Exit the ATM.
 ```
 
-## Installation
+## installation
 ```
-	1. Clone the Repo.
-	2. Open solution in Visual Studio
-	3. Run solution in debug mode
+	1. Click on green "Clone or download" button.
+	2. Click on the clipboard.
+	3. Clone the repository to your projects folder.
+	4. Open the project in Visual Studio
+	5. Run the application
 ```
 
-## License
-``` 
-	MIT License
+## author
+
+* **Charles Clemens** - *Initial work* - [CClemensJr](https://github.com/CClemensJr)
+
+
+## license
+```
+	This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 ```

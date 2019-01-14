@@ -26,16 +26,6 @@ namespace ATM_Tests
         }
 
         [Fact]
-        public void WithdrawalsShouldNotAddToBalance()
-        {
-            decimal balance = 10.00m;
-            decimal withdrawal = 5.00m;
-            decimal newBalance = balance + withdrawal;
-
-            Assert.NotEqual(newBalance, Program.WithdrawCash(balance, withdrawal));
-        }
-
-        [Fact]
         public void DepositsShouldAddToBalance()
         {
             decimal balance = 0.00m;
@@ -46,13 +36,13 @@ namespace ATM_Tests
         }
 
         [Fact]
-        public void DepositsShouldNotSubtractFromBalance()
+        public void NegativeDepositAmountsShouldNotChangeBalance()
         {
-            decimal balance = 0.00m;
-            decimal deposit = 5.00m;
-            decimal newBalance = balance - deposit;
+            decimal balance = 25.00m;
+            decimal deposit = -5.00m;
+            decimal newBalance = balance;
 
-            Assert.NotEqual(newBalance, Program.DepositCash(balance, deposit));
+            Assert.Equal(newBalance, Program.DepositCash(balance, deposit));
         }
     }
 }
